@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.side-bar {
+  background-color: aqua !important;
+}
+
+.advertising {
+  
+}
+
+  .advertising .advertising-block {
+    background-color: #808080;
+    /* TODO: VERIFICAR ESTO*/
+    height: 200px;
+  }
+
+.item {
+  font-size: 18px;
+}
+
+.item .img-item {
+  background-color: #808080;
+  width: 100%;
+  height: 250px;
+}

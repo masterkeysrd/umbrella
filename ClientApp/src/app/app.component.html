@@ -1,10 +1,18 @@
-<div>
+<div class="fluid-container">
   <div>
-    <div>
-      <app-nav-menu></app-nav-menu>
-    </div>
-    <div class="container-fluid">
-      <router-outlet></router-outlet>
+    <app-nav-menu></app-nav-menu>
+  </div>
+  <div class="main">
+    <div class="row" style="margin-right: 0">
+      <div class="col-sm-12 advertising mt-3">
+        <app-advertising></app-advertising>
+      </div>
+      <div class="col-sm-3">
+        <app-side-bar></app-side-bar>
+      </div>
+      <div class="col-sm-9">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>
