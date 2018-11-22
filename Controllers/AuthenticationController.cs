@@ -45,7 +45,7 @@ namespace umbrella.Controllers
                     );
 
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                return Ok(new { tokenString });
+                return Ok(new { Token = tokenString });
             }
             else
             {
