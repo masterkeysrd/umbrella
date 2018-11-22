@@ -13,6 +13,19 @@ import { LoginComponent } from './security/login/login.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { AdvertisingComponent } from './layout/advertising/advertising.component';
 import { ItemComponent } from './layout/item/item.component';
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider, AuthService } from 'angular-6-social-login';
+import { LoginService } from './shared/services/login.service';
+
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+    [{
+      id: FacebookLoginProvider.PROVIDER_ID,
+      provider: new FacebookLoginProvider('706875369694240')
+    }]
+  );
+
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -29,6 +42,7 @@ import { ItemComponent } from './layout/item/item.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    SocialLoginModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -37,7 +51,7 @@ import { ItemComponent } from './layout/item/item.component';
       { path: 'login', component: LoginComponent },
     ])
   ],
-  providers: [],
+  providers: [LoginService, { provide: AuthServiceConfig, useFactory: getAuthServiceConfigs }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
