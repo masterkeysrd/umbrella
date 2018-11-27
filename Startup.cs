@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using umbrella.Utils;
+using Microsoft.EntityFrameworkCore;
+using umbrella.Models;
 
 namespace umbrella
 {
@@ -46,6 +48,9 @@ namespace umbrella
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<umbrellaContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("umbrellaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
