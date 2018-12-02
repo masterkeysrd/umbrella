@@ -14,8 +14,8 @@ namespace umbrella.Models
         {
         }
 
-        public DbSet<umbrella.Models.User> User { get; set; }
-
-        public DbSet<umbrella.Models.Advertisement> Advertisement { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Advertisement> Advertisement { get; set; }
+        public DbSet<Role> Role { get; set; }
     }
 }
