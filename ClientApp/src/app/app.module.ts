@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -14,6 +14,14 @@ import { LoginComponent } from './security/login/login.component';
 import { SignUpComponent } from './layout/sign-up/sign-up.component';
 import { LoginService } from './shared/services/login.service';
 import { UserService } from './shared/services/user.service';
+import { PromotionComponent } from './layout/promotion/promotion.component';
+import { FilterComponent } from './layout/filter/filter.component';
+import { ProductComponent } from './layout/product/product.component';
+import { ProductItemComponent } from './layout/product-item/product-item.component';
+import { ProductViewComponent } from './layout/product-view/product-view.component';
+import { ShopsComponent } from './layout/shops/shops.component';
+import { ProductPublicationComponent } from './layout/product-publication/product-publication.component';
+import { MiraEstoComponent } from './layout/mira-esto/mira-esto.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,15 @@ import { UserService } from './shared/services/user.service';
     CounterComponent,
     FetchDataComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    PromotionComponent,
+    FilterComponent,
+    ProductComponent,
+    ProductItemComponent,
+    ProductViewComponent,
+    ShopsComponent,
+    ProductPublicationComponent,
+    MiraEstoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +52,9 @@ import { UserService } from './shared/services/user.service';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LoginComponent },
       { path: 'sign-up', component: SignUpComponent },
+      { path: 'shops', component: ShopsComponent },
+      { path: 'product/publication', component: ProductPublicationComponent },
+      { path: 'test', component: MiraEstoComponent }
     ])
   ],
   providers: [

@@ -1,3 +1,7 @@
+<div>
+  <a [routerLink]='["/login"]' class=""> Iniciar Seccion </a>
+  <a [routerLink]='["/sign-up"]' class="">Registrar</a>
+</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Umbrella</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle Navigation">
@@ -8,18 +12,25 @@
     <ul class="navbar-nav mr-auto">
       <li [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }' class="nav-item">
         <a [routerLink]='["/"]' (click)='collapse()' class="nav-link">
-          <span class='glyphicon glyphicon-home'></span> Home
+          <span class='glyphicon glyphicon-home'></span> Inicio
         </a>
       </li>
       <li [routerLinkActive]='["link-active"]' class="nav-item">
-        <a [routerLink]='["/login"]' (click)="collapse()" class="nav-link">
-          <span class="glyphicon glyphicon-th-list"></span>  Login
+        <a [routerLink]='["/shops"]' (click)="collapse()" class="nav-link">
+          <span class="glyphicon glyphicon-th-list"></span> Tiendas
+        </a>
+      </li>
+      <li [routerLinkActive]='["link-active"]' class="nav-item">
+        <a [routerLink]='["/test"]' (click)="collapse()" class="nav-link">
+          <span class="glyphicon glyphicon-th-list"></span> Test
         </a>
       </li>
     </ul>
-    <div class="my-2 my-lg-0">
-      <a [routerLink]='["/login"]' class="btn btn-primary"> Iniciar Seccion </a>
-      <a [routerLink]='["/sign-up"]' class="btn btn-secundary">Registrar</a>
+      
+    <div class="form-inline my-2 my-lg-0">
+      <input type="search" class="form-control mr-sm-2" />
+      <button class="btn btn-primary btn-mofied">Buscar</button>
+      <a class="btn btn-secundary ml-1" [routerLink]='["/product/publication"]'>Nuevo Anuncio</a>
     </div>
   </div>
 </nav>
